@@ -6,32 +6,149 @@ void main() {
         // appBar: AppBar(title: Text("My First App")),
         body: SafeArea(
       child: Container(
-        color: Colors.grey,
-        // width: double.infinity,
-        height: double.infinity,
+        color: Colors.grey[350],
         width: double.infinity,
-        child: Row(
-            mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
+        child: Column(
+            // crossAxisAlignment: CrossAxisAlignment.stretch,
+            // mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Container(
-                color: Colors.red,
-                child: Text("I am Red"),
+              SizedBox(
+                height: 10,
               ),
+              // Tab1
               Container(
-                color: Colors.blue,
-                child: Text("I am Blue"),
+                padding: EdgeInsets.all(5),
+                decoration: BoxDecoration(
+                  color: Colors.blue[300],
+                  border: Border.all(
+                      color: Color.fromARGB(255, 20, 20, 21), width: 2),
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                width: 430,
+                height: 60,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SizedBox(
+                      height: 8,
+                    ),
+                    Container(child: Text("17/01/2023")),
+                    SizedBox(
+                      height: 3,
+                    ),
+                    Container(child: Text("Fetch Milk From Market")),
+                  ],
+                ),
               ),
+              SizedBox(
+                height: 30,
+              ),
+              //tab2
               Container(
-                color: Colors.green,
-                child: Text("I am Green"),
+                padding: EdgeInsets.all(5),
+                decoration: BoxDecoration(
+                  color: Colors.blue[300],
+                  border: Border.all(
+                      color: Color.fromARGB(255, 20, 20, 21), width: 2),
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                width: 430,
+                height: 60,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SizedBox(
+                      height: 8,
+                    ),
+                    Container(child: Text("24/01/2023")),
+                    Container(child: Text("Pay Electricity Bill")),
+                    SizedBox(
+                      height: 3,
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: 30,
+              ),
+              //  tab3
+              Container(
+                padding: EdgeInsets.all(5),
+                decoration: BoxDecoration(
+                  color: Colors.blue[300],
+                  border: Border.all(
+                      color: Color.fromARGB(255, 20, 20, 21), width: 2),
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                width: 430,
+                height: 60,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SizedBox(
+                      height: 8,
+                    ),
+                    Container(child: Text("28/01/2023")),
+                    Container(child: Text("Complete Futter Assignment")),
+                    SizedBox(
+                      height: 3,
+                    ),
+                  ],
+                ),
               ),
             ]),
       ),
     )),
   ));
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      // child: Container(
+      //   color: Colors.grey,
+      //   // width: double.infinity,
+      //   height: double.infinity,
+      //   width: double.infinity,
+      //   child: Row(
+      //       mainAxisSize: MainAxisSize.max,
+      //       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      //       crossAxisAlignment: CrossAxisAlignment.stretch,
+      //       children: [
+      //         Container(
+      //           color: Colors.red,
+      //           child: Text("I am Red"),
+      //         ),
+      //         Container(
+      //           color: Colors.blue,
+      //           child: Text("I am Blue"),
+      //         ),
+      //         Container(
+      //           color: Colors.green,
+      //           child: Text("I am Green"),
+      //         ),
+      //       ]),
+      // ),
+
 
 
 
