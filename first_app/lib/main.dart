@@ -2,105 +2,183 @@ import 'package:flutter/material.dart';
 
 void main() {
   runApp(MaterialApp(
-    home: Scaffold(
-        // appBar: AppBar(title: Text("My First App")),
-        body: SafeArea(
-      child: Container(
-        color: Colors.grey[350],
-        width: double.infinity,
-        child: Column(
-            // crossAxisAlignment: CrossAxisAlignment.stretch,
-            // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              SizedBox(
-                height: 10,
-              ),
-              // Tab1
-              Container(
-                padding: EdgeInsets.all(5),
-                decoration: BoxDecoration(
-                  color: Colors.blue[300],
-                  border: Border.all(
-                      color: Color.fromARGB(255, 20, 20, 21), width: 2),
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                width: 430,
-                height: 60,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    SizedBox(
-                      height: 8,
-                    ),
-                    Container(child: Text("17/01/2023")),
-                    SizedBox(
-                      height: 3,
-                    ),
-                    Container(child: Text("Fetch Milk From Market")),
-                  ],
-                ),
-              ),
-              SizedBox(
-                height: 30,
-              ),
-              //tab2
-              Container(
-                padding: EdgeInsets.all(5),
-                decoration: BoxDecoration(
-                  color: Colors.blue[300],
-                  border: Border.all(
-                      color: Color.fromARGB(255, 20, 20, 21), width: 2),
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                width: 430,
-                height: 60,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    SizedBox(
-                      height: 8,
-                    ),
-                    Container(child: Text("24/01/2023")),
-                    Container(child: Text("Pay Electricity Bill")),
-                    SizedBox(
-                      height: 3,
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(
-                height: 30,
-              ),
-              //  tab3
-              Container(
-                padding: EdgeInsets.all(5),
-                decoration: BoxDecoration(
-                  color: Colors.blue[300],
-                  border: Border.all(
-                      color: Color.fromARGB(255, 20, 20, 21), width: 2),
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                width: 430,
-                height: 60,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    SizedBox(
-                      height: 8,
-                    ),
-                    Container(child: Text("28/01/2023")),
-                    Container(child: Text("Complete Futter Assignment")),
-                    SizedBox(
-                      height: 3,
-                    ),
-                  ],
-                ),
-              ),
-            ]),
-      ),
-    )),
-  ));
+      home: Scaffold(
+          // appBar: AppBar(title: Text("My First App")),
+          body: SafeArea(
+              child: Container(
+    color: Colors.grey,
+    // width: 150,
+    child: Stack(
+      fit: StackFit.loose,
+      alignment: AlignmentDirectional.topStart,
+      children: [
+        ...getMyWidgets(),
+      ],
+    ),
+
+    // child: ListView(
+    //   children: [
+    //     ...getMyWidgets(),
+    //   ],
+    // ),
+  )))));
 }
+
+// child: SingleChildScrollView(
+//   scrollDirection: Axis.vertical,
+//   physics: BouncingScrollPhysics(),
+//   child: Column(
+//     mainAxisAlignment: MainAxisAlignment.spaceAround,
+//     children: [
+//       ...getMyWidgets(),
+//       SizedBox(
+//         height: 20,
+//       ),
+//       Container(
+//         height: 20,
+//         color: Colors.black,
+//       )
+//     ],
+//   ),
+// ),
+
+List<Widget> getMyWidgets() {
+  List<Color> myContainerColors = [
+    Colors.amber,
+    Colors.black,
+    // Colors.blue,
+    // Colors.green,
+    // Colors.pink,
+    // Colors.indigo,
+    // Colors.teal,
+    // Colors.yellow.shade200,
+  ];
+
+  List<Widget> myResult = [];
+
+  for (var i = 0; i < myContainerColors.length; i++) {
+    myResult.add(Container(
+      // color: myContainerColors[i].withAlpha(100),
+      child: Positioned(
+        left: (i == 1) ? 10 : 0,
+        top: (i == 1) ? 10 : 0,
+        child: Container(
+          width: 100 / (i + 1),
+          height: 100 / (i + 1),
+          color: myContainerColors[i],
+          child: Center(child: Text("${i + 1}")),
+        ),
+      ),
+    ));
+  }
+
+  return myResult;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+      // child: Container(
+      //   color: Colors.grey[350],
+      //   width: double.infinity,
+      //   child: Column(
+      //       // crossAxisAlignment: CrossAxisAlignment.stretch,
+      //       // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      //       children: [
+      //         SizedBox(
+      //           height: 10,
+      //         ),
+      //         // Tab1
+      //         Container(
+      //           padding: EdgeInsets.all(5),
+      //           decoration: BoxDecoration(
+      //             color: Colors.blue[300],
+      //             border: Border.all(
+      //                 color: Color.fromARGB(255, 20, 20, 21), width: 2),
+      //             borderRadius: BorderRadius.circular(20),
+      //           ),
+      //           width: 430,
+      //           height: 60,
+      //           child: Column(
+      //             crossAxisAlignment: CrossAxisAlignment.start,
+      //             children: [
+      //               SizedBox(
+      //                 height: 8,
+      //               ),
+      //               Container(child: Text("17/01/2023")),
+      //               SizedBox(
+      //                 height: 3,
+      //               ),
+      //               Container(child: Text("Fetch Milk From Market")),
+      //             ],
+      //           ),
+      //         ),
+      //         SizedBox(
+      //           height: 30,
+      //         ),
+      //         //tab2
+      //         Container(
+      //           padding: EdgeInsets.all(5),
+      //           decoration: BoxDecoration(
+      //             color: Colors.blue[300],
+      //             border: Border.all(
+      //                 color: Color.fromARGB(255, 20, 20, 21), width: 2),
+      //             borderRadius: BorderRadius.circular(20),
+      //           ),
+      //           width: 430,
+      //           height: 60,
+      //           child: Column(
+      //             crossAxisAlignment: CrossAxisAlignment.start,
+      //             children: [
+      //               SizedBox(
+      //                 height: 8,
+      //               ),
+      //               Container(child: Text("24/01/2023")),
+      //               Container(child: Text("Pay Electricity Bill")),
+      //               SizedBox(
+      //                 height: 3,
+      //               ),
+      //             ],
+      //           ),
+      //         ),
+      //         SizedBox(
+      //           height: 30,
+      //         ),
+      //         //  tab3
+      //         Container(
+      //           padding: EdgeInsets.all(5),
+      //           decoration: BoxDecoration(
+      //             color: Colors.blue[300],
+      //             border: Border.all(
+      //                 color: Color.fromARGB(255, 20, 20, 21), width: 2),
+      //             borderRadius: BorderRadius.circular(20),
+      //           ),
+      //           width: 430,
+      //           height: 60,
+      //           child: Column(
+      //             crossAxisAlignment: CrossAxisAlignment.start,
+      //             children: [
+      //               SizedBox(
+      //                 height: 8,
+      //               ),
+      //               Container(child: Text("28/01/2023")),
+      //               Container(child: Text("Complete Futter Assignment")),
+      //               SizedBox(
+      //                 height: 3,
+      //               ),
+      //             ],
+      //           ),
+      //         ),
+      //       ]),
+
 
 
 
